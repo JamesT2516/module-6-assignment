@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | James Taljaard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>James Taljaard</h1>
+
+        <p>
+            Learning front-end development by building, testing,
+            and improving as I go.
+        </p>
+
+        <nav aria-label="Portfolio navigation">
+
+            <ul>
+
+                <li>
+                    <a
+                        href="index.html"
+                        class="nav-tab return-tab-link"
+                        data-return-tab="about">
+                        About Me
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="index.html"
+                        class="nav-tab return-tab-link"
+                        data-return-tab="learning">
+                        What I Am Learning
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="index.html"
+                        class="nav-tab return-tab-link"
+                        data-return-tab="projects">
+                        My Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="contact.html"
+                        class="nav-tab active"
+                        aria-current="page">
+                        Contact Me
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main class="contact-page">
+
+        <section class="contact-form-section">
+
+            <div class="section-heading reveal">
+
+                <p class="section-label">
+                    Module 6 JavaScript Project
+                </p>
+
+                <h2>Contact Me</h2>
+
+                <p class="section-intro">
+                    This contact form is part of my Module 6 project.
+                    It uses JavaScript to validate your information
+                    while you type and provide immediate feedback
+                    before the form can be submitted.
+                </p>
+
+            </div>
+
+
+            <div class="contact-intro reveal">
+
+                <h3>How the Form Works</h3>
+
+                <p>
+                    Each field is checked using JavaScript. Your name
+                    must contain letters, your email must follow a
+                    valid email format, and your message must contain
+                    at least 10 characters.
+                </p>
+
+                <p>
+                    If something is incorrect, a message appears
+                    directly below the relevant field. The form cannot
+                    continue until all three fields are valid.
+                </p>
+
+                <p>
+                    When every field passes validation, JavaScript
+                    prevents the normal form submission and displays
+                    a confirmation modal containing the information
+                    entered.
+                </p>
+
+                <p class="practice-note">
+                    This is a course project. The information entered
+                    into this form is not sent to a server.
+                </p>
+
+            </div>
+
+
+            <form
+                id="contact-form"
+                class="reveal"
+                novalidate>
+
+                <div class="form-group">
+
+                    <label for="contact-name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contact-name"
+                        name="name"
+                        autocomplete="name"
+                        aria-describedby="name-error"
+                        required>
+
+                    <p
+                        id="name-error"
+                        class="error-message"
+                        aria-live="polite">
+                    </p>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="contact-email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="contact-email"
+                        name="email"
+                        autocomplete="email"
+                        aria-describedby="email-error"
+                        required>
+
+                    <p
+                        id="email-error"
+                        class="error-message"
+                        aria-live="polite">
+                    </p>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="contact-message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="contact-message"
+                        name="message"
+                        rows="7"
+                        aria-describedby="message-error"
+                        required></textarea>
+
+                    <p
+                        id="message-error"
+                        class="error-message"
+                        aria-live="polite">
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button">
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Confirmation Modal -->
+
+    <div
+        id="confirmation-modal"
+        class="confirmation-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="confirmation-title">
+
+        <div class="modal-content">
+
+            <button
+                type="button"
+                id="close-confirmation-modal"
+                class="modal-close"
+                aria-label="Close confirmation">
+                &times;
+            </button>
+
+            <p class="modal-label">
+                Form Successfully Validated
+            </p>
+
+            <h2 id="confirmation-title">
+                Message Submitted
+            </h2>
+
+            <p>
+                Your information passed the JavaScript validation.
+                These are the details you entered:
+            </p>
+
+
+            <div class="submitted-details">
+
+                <p>
+                    <strong>Name</strong>
+                    <span id="submitted-name"></span>
+                </p>
+
+                <p>
+                    <strong>Email</strong>
+                    <span id="submitted-email"></span>
+                </p>
+
+                <p>
+                    <strong>Message</strong>
+                    <span id="submitted-message"></span>
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="modal-done-button">
+                Done
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <p>&copy; 2026 James Taljaard</p>
+    </footer>
+
+</body>
+
+</html>

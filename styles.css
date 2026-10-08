@@ -1,5 +1,5 @@
 /* ========================================
-   Base / Mobile Styles
+   Base Styles
    ======================================== */
 
 * {
@@ -11,18 +11,39 @@ html {
 }
 
 body {
+    min-height: 100vh;
+    min-height: 100dvh;
+
     margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
     background-color: #f8fafc;
     color: #0f172a;
+
     font-family: "Roboto", Arial, sans-serif;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
+}
+
+main {
+    flex: 1;
 }
 
 h1,
 h2,
 h3 {
     font-family: "Poppins", Arial, sans-serif;
+    line-height: 1.3;
+}
+
+h2 {
+    color: #1d4ed8;
+    font-size: 28px;
+}
+
+h3 {
     color: #0f172a;
 }
 
@@ -37,21 +58,26 @@ img {
    ======================================== */
 
 header {
+    padding: 35px 20px;
+
     background-color: #0f172a;
     color: #ffffff;
+
     text-align: center;
-    padding: 30px 20px;
 }
 
 header h1 {
+    margin: 0 0 8px;
+
     color: #ffffff;
-    font-size: 30px;
-    margin: 0 0 5px;
+
+    font-size: 32px;
 }
 
-header p {
-    color: #e2e8f0;
+header > p {
     margin: 0;
+
+    color: #e2e8f0;
 }
 
 
@@ -60,210 +86,333 @@ header p {
    ======================================== */
 
 nav {
-    margin-top: 25px;
+    margin-top: 28px;
 }
 
 nav ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
     gap: 10px;
-    list-style: none;
-    margin: 0;
+
+    max-width: 700px;
+
+    margin: 0 auto;
     padding: 0;
+
+    list-style: none;
 }
 
 nav li {
     margin: 0;
 }
 
-nav a {
+.nav-tab {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-    height: 100%;
+
+    min-height: 48px;
+
+    padding: 10px 12px;
+
     background-color: #1d4ed8;
     color: #ffffff;
-    padding: 8px 10px;
+
+    border: 2px solid #1d4ed8;
+    border-radius: 6px;
+
     text-decoration: none;
     text-align: center;
-    font-size: 14px;
-    border-radius: 5px;
+
+    font-weight: 500;
+
     transition:
         background-color 0.3s ease,
-        color 0.3s ease;
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
-nav a:hover,
-nav a:focus {
+.nav-tab:hover,
+.nav-tab:focus {
     background-color: #ffffff;
     color: #1d4ed8;
 }
 
+.nav-tab.active {
+    background-color: #ffffff;
+    color: #1d4ed8;
+}
+
+.nav-tab:hover {
+    transform: translateY(-2px);
+}
+
 
 /* ========================================
-   Main Content
+   Portfolio Layout
    ======================================== */
 
-main {
+.portfolio-main {
     width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 1100px;
+
+    margin: 35px auto;
 }
 
-section {
-    background-color: #ffffff;
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+.tab-panel {
+    display: none;
 }
 
-section h2 {
-    color: #1d4ed8;
-    margin-top: 0;
+.tab-panel.active-panel {
+    display: block;
+
+    animation: panelFade 0.4s ease;
+}
+
+@keyframes panelFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
 }
 
 
 /* ========================================
-   About Section
+   General Content
    ======================================== */
 
-figure {
-    margin: 25px 0 0;
+.content-card,
+.contact-form-section {
+    padding: 25px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-label {
+    margin: 0 0 4px;
+
+    color: #1d4ed8;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    margin: 0 0 12px;
+}
+
+.section-intro {
+    max-width: 760px;
+
+    margin: 0;
+
+    color: #475569;
+
+    font-size: 17px;
+}
+
+
+/* ========================================
+   About
+   ======================================== */
+
+.about-layout {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+}
+
+.about-copy h3 {
+    margin: 0 0 10px;
+}
+
+.about-copy > div {
+    margin-bottom: 28px;
+}
+
+.about-copy > div:last-child {
+    margin-bottom: 0;
+}
+
+.profile-figure {
+    margin: 0;
+
     text-align: center;
 }
 
-figure img {
-    width: 250px;
+.profile-figure img {
+    width: 280px;
+
     border: 4px solid #e2e8f0;
-    border-radius: 8px;
+    border-radius: 10px;
+
     transition: transform 0.3s ease;
 }
 
-figure img:hover {
-    transform: scale(1.05);
+.profile-figure img:hover {
+    transform: scale(1.03);
 }
 
-figcaption {
-    color: #475569;
+.profile-figure figcaption {
+    margin-top: 10px;
+
+    color: #64748b;
+
     font-size: 14px;
-    margin-top: 8px;
 }
 
 
 /* ========================================
-   Learning and Project Content
+   Learning
    ======================================== */
 
-article {
-    background-color: #f8fafc;
-    border-left: 4px solid #1d4ed8;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 5px;
+.learning-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
 }
 
-article h3 {
-    color: #0f172a;
+.learning-card {
+    padding: 22px;
+
+    background-color: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 7px;
+}
+
+.learning-card h3 {
     margin-top: 0;
 }
 
+.learning-card p {
+    color: #475569;
+}
 
-/* ========================================
-   Custom Skills List
-   ======================================== */
-
-#learning ul {
-    list-style: none;
+.learning-card ul {
     margin-bottom: 0;
-    padding-left: 0;
+    padding-left: 22px;
 }
 
-#learning li {
-    position: relative;
-    padding-left: 28px;
-    margin-bottom: 12px;
-}
-
-#learning li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #1d4ed8;
-    font-weight: bold;
+.learning-card li {
+    margin-bottom: 6px;
 }
 
 
 /* ========================================
-   Contact Section
+   Projects
    ======================================== */
 
-#contact a {
+.project-card {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+    padding: 24px;
+
+    background-color: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 7px;
+}
+
+.project-card:last-child {
+    margin-bottom: 0;
+}
+
+.project-card h3 {
+    margin: 0 0 10px;
+}
+
+.project-card p {
+    color: #475569;
+}
+
+.project-number {
     color: #1d4ed8;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
 
-#contact a:hover,
-#contact a:focus {
-    color: #0f172a;
-}
-
-fieldset {
-    min-width: 0;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    padding: 18px;
-    margin-top: 20px;
-}
-
-legend {
     font-family: "Poppins", Arial, sans-serif;
-    font-weight: 600;
-    color: #0f172a;
-    padding: 0 8px;
+    font-size: 20px;
+    font-weight: 700;
 }
 
-label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
+.project-link {
+    display: inline-block;
 
-input,
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
-    font-family: "Roboto", Arial, sans-serif;
-    font-size: 16px;
-}
+    margin-top: 5px;
+    padding: 9px 15px;
 
-input:focus,
-textarea:focus {
-    border-color: #1d4ed8;
-    outline: 2px solid #bfdbfe;
-}
-
-textarea {
-    resize: vertical;
-}
-
-button {
     background-color: #1d4ed8;
     color: #ffffff;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-weight: 500;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.project-link:hover,
+.project-link:focus {
+    background-color: #0f172a;
+}
+
+.project-link:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+button {
+    padding: 11px 18px;
+
+    background-color: #1d4ed8;
+    color: #ffffff;
+
     border: 1px solid #1d4ed8;
     border-radius: 5px;
-    padding: 10px 18px;
+
     font-family: "Roboto", Arial, sans-serif;
     font-size: 16px;
     font-weight: 500;
+
     cursor: pointer;
+
     transition:
         background-color 0.3s ease,
-        color 0.3s ease;
+        border-color 0.3s ease,
+        transform 0.3s ease;
 }
 
 button:hover,
@@ -271,33 +420,35 @@ button:focus {
     background-color: #0f172a;
 }
 
-#contact em {
-    color: #475569;
-    font-size: 14px;
+button:hover {
+    transform: translateY(-1px);
 }
 
 
 /* ========================================
-   Module 5 JavaScript Contact Popup
+   Floating Contact Popup
    ======================================== */
 
 .contact-popup {
     position: fixed;
+
     top: 50%;
-    right: 20px;
+    right: 25px;
+
     z-index: 1000;
 
     width: calc(100% - 40px);
-    max-width: 340px;
+    max-width: 350px;
+
+    padding: 25px;
 
     background-color: #ffffff;
+
     border: 1px solid #cbd5e1;
     border-left: 5px solid #1d4ed8;
     border-radius: 8px;
 
-    padding: 25px;
-
-    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.18);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
 
     opacity: 0;
     visibility: hidden;
@@ -313,68 +464,352 @@ button:focus {
 .contact-popup.show {
     opacity: 1;
     visibility: visible;
+
     transform: translate(0, -50%);
 }
 
 .contact-popup h2 {
-    color: #1d4ed8;
     margin: 0 30px 10px 0;
-    font-size: 22px;
+
+    font-size: 23px;
 }
 
 .contact-popup p {
     margin: 0 0 18px;
+
+    color: #334155;
 }
 
 .popup-close {
     position: absolute;
+
     top: 8px;
     right: 10px;
 
+    padding: 5px 8px;
+
     background: none;
-    color: #475569;
+
     border: none;
 
-    padding: 5px 8px;
+    color: #475569;
 
     font-size: 28px;
     line-height: 1;
-
-    cursor: pointer;
 }
 
 .popup-close:hover,
 .popup-close:focus {
     background: none;
     color: #0f172a;
+
+    transform: none;
 }
 
-.popup-contact-link {
-    display: inline-block;
 
-    background-color: #1d4ed8;
-    color: #ffffff;
+/* ========================================
+   Contact Page
+   ======================================== */
 
-    border: none;
-    padding: 10px 18px;
+.contact-page {
+    width: 90%;
+    max-width: 800px;
 
+    margin: 35px auto;
+}
+
+.contact-form-section {
+    margin: 0;
+}
+
+.contact-intro {
+    margin-bottom: 30px;
+    padding: 20px;
+
+    background-color: #f8fafc;
+
+    border-left: 4px solid #1d4ed8;
+    border-radius: 6px;
+}
+
+.contact-intro h3 {
+    margin-top: 0;
+}
+
+.contact-intro p {
+    color: #475569;
+}
+
+.practice-note {
+    margin-bottom: 0;
+
+    font-style: italic;
+}
+
+
+/* ========================================
+   Contact Form
+   ======================================== */
+
+#contact-form {
+    margin-top: 25px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #0f172a;
+
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    background-color: #ffffff;
+    color: #0f172a;
+
+    border: 1px solid #cbd5e1;
     border-radius: 5px;
 
-    text-decoration: none;
-    font-weight: 500;
-
-    cursor: pointer;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 16px;
 
     transition:
-        background-color 0.3s ease,
-        transform 0.3s ease;
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.popup-contact-link:hover,
-.popup-contact-link:focus {
-    background-color: #0f172a;
-    color: #ffffff;
-    transform: translateY(-1px);
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+
+    border-color: #1d4ed8;
+
+    box-shadow: 0 0 0 3px #dbeafe;
+}
+
+.form-group textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+.submit-button {
+    min-width: 150px;
+}
+
+
+/* ========================================
+   Valid Form Submit Button
+   ======================================== */
+
+.submit-button.form-valid {
+    background-color: #15803d;
+    border-color: #166534;
+}
+
+.submit-button.form-valid:hover,
+.submit-button.form-valid:focus {
+    background-color: #166534;
+    border-color: #14532d;
+}
+
+
+/* ========================================
+   Validation Feedback
+   ======================================== */
+
+.error-message {
+    min-height: 22px;
+
+    margin: 6px 0 0;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+}
+
+.form-group input.input-error,
+.form-group textarea.input-error {
+    border-color: #b91c1c;
+
+    box-shadow: 0 0 0 2px #fee2e2;
+}
+
+.form-group input.input-valid,
+.form-group textarea.input-valid {
+    border-color: #15803d;
+
+    box-shadow: 0 0 0 2px #dcfce7;
+}
+
+
+/* ========================================
+   Confirmation Modal
+   ======================================== */
+
+.confirmation-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 2000;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background-color: rgba(15, 23, 42, 0.7);
+}
+
+.confirmation-modal.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 540px;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    background-color: #ffffff;
+
+    border-left: 5px solid #1d4ed8;
+    border-radius: 9px;
+
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.3);
+
+    animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.modal-label {
+    margin: 0 0 4px;
+
+    color: #15803d;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.modal-content h2 {
+    margin: 0 35px 10px 0;
+}
+
+.modal-content > p {
+    color: #475569;
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 10px;
+    right: 12px;
+
+    padding: 5px 8px;
+
+    background: none;
+
+    border: none;
+
+    color: #475569;
+
+    font-size: 28px;
+    line-height: 1;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    background: none;
+    color: #0f172a;
+
+    transform: none;
+}
+
+.submitted-details {
+    margin: 22px 0;
+    padding: 18px;
+
+    background-color: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+}
+
+.submitted-details p {
+    margin: 0 0 16px;
+}
+
+.submitted-details p:last-child {
+    margin-bottom: 0;
+}
+
+.submitted-details strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #0f172a;
+}
+
+.submitted-details span {
+    color: #475569;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   Scroll Reveal
+   ======================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
 }
 
 
@@ -383,11 +818,13 @@ button:focus {
    ======================================== */
 
 footer {
+    margin-top: auto;
+    padding: 22px;
+
     background-color: #0f172a;
     color: #ffffff;
+
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
 }
 
 footer p {
@@ -402,46 +839,47 @@ footer p {
 @media (min-width: 768px) {
 
     header {
-        padding: 40px 20px;
+        padding: 45px 20px;
     }
 
     header h1 {
-        font-size: 36px;
+        font-size: 38px;
     }
 
     nav ul {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 10px;
     }
 
-    nav a {
-        font-size: 16px;
-        padding: 12px 16px;
+    .nav-tab {
+        padding: 11px 18px;
     }
 
-    main {
-        display: grid;
+    .content-card,
+    .contact-form-section {
+        padding: 35px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1.5fr 0.8fr;
+        align-items: start;
+    }
+
+    .learning-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        margin-top: 30px;
     }
 
-    section {
-        margin: 0;
-        padding: 30px;
-    }
+    .project-card {
+        grid-template-columns: auto 1fr;
 
-    #about,
-    #contact {
-        grid-column: 1 / -1;
+        gap: 20px;
     }
 
     .contact-popup {
-        right: 30px;
-        max-width: 360px;
+        right: 35px;
     }
+
 }
 
 
@@ -456,34 +894,27 @@ footer p {
     }
 
     header h1 {
-        font-size: 40px;
+        font-size: 42px;
     }
 
-    nav {
-        margin-top: 30px;
+    .portfolio-main {
+        margin-top: 45px;
     }
 
-    nav a {
-        padding: 12px 20px;
+    .content-card {
+        padding: 42px;
     }
 
-    main {
-        max-width: 1100px;
-        gap: 35px;
-    }
-
-    section {
-        padding: 35px;
-    }
-
-    figure img {
-        width: 280px;
+    .learning-grid {
+        gap: 24px;
     }
 
     .contact-popup {
-        right: 40px;
+        right: 45px;
+
         max-width: 380px;
     }
+
 }
 
 
@@ -493,8 +924,41 @@ footer p {
 
 @media (max-width: 480px) {
 
+    header {
+        padding: 30px 15px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    .nav-tab {
+        min-height: 46px;
+
+        padding: 8px;
+
+        font-size: 14px;
+    }
+
+    .portfolio-main,
+    .contact-page {
+        width: 92%;
+
+        margin: 20px auto;
+    }
+
+    .content-card,
+    .contact-form-section {
+        padding: 20px;
+    }
+
+    .profile-figure img {
+        width: 240px;
+    }
+
     .contact-popup {
         top: auto;
+
         right: 15px;
         bottom: 15px;
         left: 15px;
@@ -508,4 +972,29 @@ footer p {
     .contact-popup.show {
         transform: translateY(0);
     }
+
+    .modal-content {
+        padding: 25px 20px;
+    }
+
+}
+
+
+/* ========================================
+   Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms;
+        animation-duration: 0.01ms;
+    }
+
 }

@@ -20,11 +20,12 @@
 
 <body>
 
-    <!-- Module 5 JavaScript Contact Popup -->
+    <!-- Floating Contact Popup -->
+
     <aside
-    id="contact-popup"
-    class="contact-popup"
-    aria-labelledby="popup-title">
+        id="contact-popup"
+        class="contact-popup"
+        aria-labelledby="popup-title">
 
         <button
             type="button"
@@ -37,14 +38,13 @@
         <h2 id="popup-title">Let's Connect</h2>
 
         <p>
-            Thanks for visiting my portfolio. If you would like to get
-            in touch, you can head straight to my contact section.
+            Thanks for visiting my portfolio. If you would like to
+            get in touch, head over to my Contact Me page.
         </p>
 
         <button
             type="button"
-            id="popup-contact-button"
-            class="popup-contact-link">
+            id="popup-contact-button">
             Contact Me
         </button>
 
@@ -60,248 +60,477 @@
             and improving as I go.
         </p>
 
-        <nav aria-label="Main navigation">
+        <nav aria-label="Portfolio navigation">
+
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#learning">What I Am Learning</a></li>
-                <li><a href="#projects">My Projects</a></li>
-                <li><a href="#contact">Contact Me</a></li>
+
+                <li>
+                    <a
+                        href="#about"
+                        class="nav-tab active"
+                        data-tab="about">
+                        About Me
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="#learning"
+                        class="nav-tab"
+                        data-tab="learning">
+                        What I Am Learning
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="#projects"
+                        class="nav-tab"
+                        data-tab="projects">
+                        My Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="contact.html"
+                        class="nav-tab">
+                        Contact Me
+                    </a>
+                </li>
+
             </ul>
+
         </nav>
 
     </header>
 
 
-    <main>
+    <main class="portfolio-main">
 
         <!-- About Me -->
 
-        <section id="about">
+        <section
+            id="about"
+            class="tab-panel active-panel"
+            data-panel="about">
 
-            <h2>About Me</h2>
+            <div class="content-card">
 
-            <p>
-                Hi, I’m James Taljaard. I’m currently working through a
-                Front-end Web Development course and using this portfolio
-                to put what I learn into practice.
-            </p>
+                <div class="section-heading reveal">
 
-            <p>
-                I started with HTML and learned how to give webpages clear
-                structure. I then moved into CSS, responsive design,
-                Flexbox, and CSS Grid to improve how websites look and
-                adapt across different screen sizes.
-            </p>
+                    <p class="section-label">
+                        My Journey
+                    </p>
 
-            <p>
-                I am now learning JavaScript and beginning to understand
-                how websites can respond to user actions, work with data,
-                and change content dynamically. Building this portfolio
-                one module at a time is helping me understand how HTML,
-                CSS, and JavaScript work together.
-            </p>
+                    <h2>About Me</h2>
 
-            <figure>
+                    <p class="section-intro">
+                        I am building my front-end development skills
+                        one module at a time and using this portfolio
+                        to apply what I learn in a practical way.
+                    </p>
 
-                <img
-                    src="images/james-taljaard.jpg"
-                    alt="Portrait of James Taljaard"
-                    width="250"
-                    loading="lazy">
+                </div>
 
-                <figcaption>
-                    Learning by building and improving with each module.
-                </figcaption>
 
-            </figure>
+                <div class="about-layout">
+
+                    <div class="about-copy">
+
+                        <div class="reveal">
+
+                            <h3>Learning Through Practice</h3>
+
+                            <p>
+                                Hi, I’m James Taljaard. I’m currently
+                                completing a Front-end Web Development
+                                course and developing this portfolio
+                                alongside the course.
+                            </p>
+
+                            <p>
+                                I started by learning how semantic HTML
+                                gives a webpage structure and meaning.
+                                I then introduced CSS to work with
+                                colour, typography, spacing, layout,
+                                and the overall appearance of a site.
+                            </p>
+
+                        </div>
+
+
+                        <div class="reveal">
+
+                            <h3>From Static Pages to Interaction</h3>
+
+                            <p>
+                                As the course progressed, I moved into
+                                responsive design using a mobile-first
+                                approach, media queries, Flexbox, and
+                                CSS Grid.
+                            </p>
+
+                            <p>
+                                JavaScript has added another layer to
+                                that learning. Instead of only
+                                designing how a page looks, I am
+                                learning how a webpage can listen for
+                                user actions, make decisions, update
+                                content, and provide useful feedback.
+                            </p>
+
+                        </div>
+
+
+                        <div class="reveal">
+
+                            <h3>My Current Focus</h3>
+
+                            <p>
+                                Module 6 is helping me develop a deeper
+                                understanding of DOM manipulation,
+                                event handling, form validation, and
+                                interactive user interfaces.
+                            </p>
+
+                            <p>
+                                I am also being introduced to
+                                asynchronous JavaScript, API
+                                integration, modern JavaScript
+                                development tools, and the foundations
+                                of Vue.js.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <figure class="profile-figure reveal">
+
+                        <img
+                            src="images/james-taljaard.jpg"
+                            alt="Portrait of James Taljaard"
+                            width="280">
+
+                        <figcaption>
+                            Building my skills through practical
+                            front-end projects.
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+            </div>
 
         </section>
 
 
         <!-- What I Am Learning -->
 
-        <section id="learning">
+        <section
+            id="learning"
+            class="tab-panel"
+            data-panel="learning">
 
-            <h2>What I Am Learning</h2>
+            <div class="content-card">
 
-            <article>
+                <div class="section-heading reveal">
 
-                <h3>Bringing Websites to Life with JavaScript</h3>
+                    <p class="section-label">
+                        Module 6
+                    </p>
 
-                <p>
-                    After learning how to structure webpages with HTML
-                    and create responsive layouts with CSS, I am now
-                    learning how JavaScript adds behaviour and
-                    interactivity to a website.
-                </p>
+                    <h2>What I Am Learning</h2>
 
-                <p>
-                    I am learning how JavaScript can respond to user
-                    actions, make decisions, organise data, and interact
-                    with the Document Object Model to update content on
-                    the page.
-                </p>
+                    <p class="section-intro">
+                        I am now moving beyond basic JavaScript and
+                        learning how it can be used to create more
+                        useful, responsive, and interactive web
+                        experiences.
+                    </p>
 
-                <h3>Skills I’m Building</h3>
+                </div>
 
-                <ul>
-                    <li>
-                        Creating structured and accessible webpages
-                        with semantic HTML5
-                    </li>
 
-                    <li>
-                        Styling responsive layouts using CSS,
-                        Flexbox, Grid, and media queries
-                    </li>
+                <div class="learning-grid">
 
-                    <li>
-                        Using transitions, hover effects, and
-                        visible focus states
-                    </li>
+                    <article class="learning-card reveal">
 
-                    <li>
-                        Working with JavaScript variables,
-                        constants, functions, and operators
-                    </li>
+                        <h3>DOM Manipulation</h3>
 
-                    <li>
-                        Using conditionals, loops, arrays, and
-                        objects to work with data
-                    </li>
+                        <p>
+                            I am learning how JavaScript works with the
+                            Document Object Model to find elements and
+                            update webpage content without reloading
+                            the page.
+                        </p>
 
-                    <li>
-                        Selecting and changing webpage elements
-                        using the DOM
-                    </li>
+                        <ul>
+                            <li>querySelector and querySelectorAll</li>
+                            <li>Changing text and attributes</li>
+                            <li>Adding and removing elements</li>
+                            <li>Working with classList</li>
+                        </ul>
 
-                    <li>
-                        Using event listeners to respond to
-                        user interaction
-                    </li>
+                    </article>
 
-                    <li>
-                        Testing, debugging, validating, and
-                        managing projects with Git and GitHub
-                    </li>
-                </ul>
 
-            </article>
+                    <article class="learning-card reveal">
+
+                        <h3>Events and User Interaction</h3>
+
+                        <p>
+                            I am learning how event listeners allow a
+                            webpage to respond to actions such as
+                            clicking, typing, submitting forms, and
+                            pressing keys.
+                        </p>
+
+                        <ul>
+                            <li>addEventListener</li>
+                            <li>Click and input events</li>
+                            <li>Submit and keydown events</li>
+                            <li>Event bubbling and delegation</li>
+                        </ul>
+
+                    </article>
+
+
+                    <article class="learning-card reveal">
+
+                        <h3>Validation and Feedback</h3>
+
+                        <p>
+                            For Assignment 6, I am applying JavaScript
+                            to validate user input while it is entered
+                            and provide useful feedback immediately.
+                        </p>
+
+                        <ul>
+                            <li>Checking user input</li>
+                            <li>Conditional validation</li>
+                            <li>Real-time error messages</li>
+                            <li>Confirmation modal interaction</li>
+                        </ul>
+
+                    </article>
+
+
+                    <article class="learning-card reveal">
+
+                        <h3>Asynchronous JavaScript</h3>
+
+                        <p>
+                            Module 6 is introducing me to how
+                            JavaScript can manage tasks that take time
+                            without stopping the rest of a webpage
+                            from continuing to work.
+                        </p>
+
+                        <ul>
+                            <li>Callbacks</li>
+                            <li>Promises</li>
+                            <li>Async and await</li>
+                            <li>Fetching data from APIs</li>
+                        </ul>
+
+                    </article>
+
+
+                    <article class="learning-card reveal">
+
+                        <h3>Debugging and Modern Tools</h3>
+
+                        <p>
+                            I am using browser developer tools to
+                            inspect and debug JavaScript more
+                            effectively and understand what is
+                            happening while my code runs.
+                        </p>
+
+                        <ul>
+                            <li>Console testing</li>
+                            <li>Breakpoints</li>
+                            <li>Watching variable values</li>
+                            <li>Network request inspection</li>
+                            <li>JavaScript modules and bundlers</li>
+                        </ul>
+
+                    </article>
+
+
+                    <article class="learning-card reveal">
+
+                        <h3>Vue.js Foundations</h3>
+
+                        <p>
+                            I am being introduced to Vue.js and how a
+                            JavaScript framework can make interactive
+                            interfaces easier to organise and reuse.
+                        </p>
+
+                        <ul>
+                            <li>Reactive data</li>
+                            <li>Templates</li>
+                            <li>Directives</li>
+                            <li>Reusable components</li>
+                            <li>Props</li>
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </div>
 
         </section>
 
 
-        <!-- Projects -->
+        <!-- My Projects -->
 
-        <section id="projects">
+        <section
+            id="projects"
+            class="tab-panel"
+            data-panel="projects">
 
-            <h2>My Projects</h2>
+            <div class="content-card">
 
-            <article>
+                <div class="section-heading reveal">
 
-                <h3>My Front-End Portfolio Website</h3>
-
-                <p>
-                    This portfolio is my ongoing project for the
-                    Front-end Web Development course. It started as
-                    a simple semantic HTML page and has developed
-                    as I have progressed through each module.
-                </p>
-
-                <p>
-                    I added CSS to improve the colour, typography,
-                    spacing, and layout before making the website
-                    responsive using a mobile-first approach,
-                    media queries, Flexbox, and CSS Grid.
-                </p>
-
-                <p>
-                    I am now adding JavaScript to introduce behaviour
-                    and interactivity. For Module 5, I created an
-                    interactive contact message that appears when the
-                    page loads and responds to user actions.
-                </p>
-
-                <p>
-                    As I continue through the course, I’ll keep
-                    improving this portfolio and applying the new
-                    skills I learn.
-                </p>
-
-            </article>
-
-        </section>
-
-
-        <!-- Contact -->
-
-        <section id="contact">
-
-            <h2>Contact Me</h2>
-
-            <p>
-                If you would like to get in touch, you can send me an
-                email or use the practice contact form below.
-            </p>
-
-            <p>
-                <a href="mailto:taljaardjames@gmail.com">
-                    Send me an email
-                </a>
-            </p>
-
-
-            <form action="#" method="post">
-
-                <fieldset>
-
-                    <legend>Send Me a Message</legend>
-
-                    <p>
-                        <label for="name">Name:</label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required>
+                    <p class="section-label">
+                        Learning by Building
                     </p>
 
-                    <p>
-                        <label for="email">Email Address:</label>
+                    <h2>My Projects</h2>
 
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required>
+                    <p class="section-intro">
+                        This portfolio is an ongoing development
+                        project that changes as I progress through
+                        each module of the course.
                     </p>
 
-                    <p>
-                        <label for="message">Message:</label>
+                </div>
 
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="5"
-                            cols="40"
-                            required></textarea>
-                    </p>
 
-                    <button type="submit">
-                        Send Message
-                    </button>
+                <article class="project-card reveal">
 
-                </fieldset>
+                    <div class="project-number">
+                        01
+                    </div>
 
-            </form>
+                    <div>
 
-            <p>
-                <em>
-                    This form is for practice and is not connected
-                    to a server yet.
-                </em>
-            </p>
+                        <h3>Front-End Portfolio Website</h3>
+
+                        <p>
+                            The portfolio began as a semantic HTML page
+                            and has developed through each stage of my
+                            front-end learning.
+                        </p>
+
+                        <p>
+                            I have progressively added CSS styling,
+                            responsive layouts, Flexbox, CSS Grid,
+                            interactive states, and JavaScript
+                            behaviour.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card reveal">
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>Module 5 JavaScript Interaction</h3>
+
+                        <p>
+                            In Module 5, I added my first JavaScript
+                            interaction to the portfolio.
+                        </p>
+
+                        <p>
+                            The floating Let's Connect message
+                            demonstrates DOM selection, functions,
+                            event listeners, and CSS class changes.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card reveal">
+
+                    <div class="project-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>Module 6 Contact Form</h3>
+
+                        <p>
+                            My current project is a dedicated contact
+                            page with JavaScript-powered validation.
+                        </p>
+
+                        <p>
+                            The form checks a visitor's name, email,
+                            and message while they type. If all fields
+                            are valid, JavaScript prevents the normal
+                            form submission and displays the entered
+                            information in a confirmation modal.
+                        </p>
+
+                        <a
+                            href="contact.html"
+                            class="project-link">
+                            View Contact Form
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card reveal">
+
+                    <div class="project-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h3>Continuous Development</h3>
+
+                        <p>
+                            I am treating the portfolio as a long-term
+                            project rather than a finished page.
+                        </p>
+
+                        <p>
+                            Each module gives me an opportunity to
+                            review existing code, improve the user
+                            experience, and introduce new techniques
+                            while keeping previous functionality
+                            working correctly.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
 
         </section>
 
